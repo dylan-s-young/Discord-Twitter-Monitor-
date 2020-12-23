@@ -3,9 +3,10 @@ import time
 import json
 import sys
 from datetime import datetime
+from twitter_details import auth_keys,api_keys
 
-auth = tweepy.OAuthHandler('credentials here, credentials here')
-auth.set_access_token('credentials here, credentials here')
+auth = tweepy.OAuthHandler(api_keys[0],api_keys[1]) #API Keys
+auth.set_access_token(auth_keys[0],auth_keys[1]) #Auth Tokens
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 def initial_tweet(username):
@@ -34,4 +35,4 @@ def initial_tweet(username):
     return username , text , profile_img, media_image, 
 
 def Monitor_user(username, created_at):
-    
+    pass
