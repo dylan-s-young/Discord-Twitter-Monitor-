@@ -25,3 +25,8 @@
 - Minor tweaks to different methods. 
 - Notes: 
     - Will add follow count and more. (See what I can add from JSON)
+## ```Update Version 0.0.5```
+### 12/23/20
+- Tweak to fix image posting in 'Twitter_details.py'
+- Bugs:
+    - If a photo is available, full_text will post the https link along with the text in the tweet. (Can fix by filtering out https://)

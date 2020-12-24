@@ -19,18 +19,10 @@ class twitter_user():
         self.profile_img = ""
         self.created_at = ""
     def monitoring_tweets(self):
-        """
-        Summary: 
-        Prints Initial Tweet that is being monitored. 
-        Returns:
-        username
-        text from tweet 
-        """
         tweets = api.user_timeline(screen_name = self.username, count = 200, include_rts = False, tweet_mode = 'extended')
         status = tweets[0]
         json_str = json.dumps(status._json)
         parsed_json = json.loads(json_str)
-
         monitoring_next = parsed_json['created_at']
         if monitoring_next == self.created_at:
             print(f'No new tweets @ {datetime.now()}...Sleeping for 10 Seconds.')
@@ -43,11 +35,11 @@ class twitter_user():
                 self.media_image += parsed_json['entities']['media'][0]['media_url']
             except:
                 self.media_image = False
-            print(self.media_image)
             post(self.username,self.text,self.profile_img,self.media_image) #posts tweet
+            self.media_image = ''
+            self.text = ''
         self.monitoring_tweets()
-            
-
+    
     def user_being_monitored(self): 
         tweets = api.user_timeline(screen_name = self.username, count = 200, include_rts = False, tweet_mode = 'extended')
         status = tweets[0]
@@ -60,6 +52,12 @@ class twitter_user():
         monitoring_post(self.username,self.profile_img)
         print(f'Last tweet was @ {self.created_at}. Monitoring for next tweet....')
         self.monitoring_tweets()
-
+    
+    def json_details(self):
+        tweets = api.user_timeline(screen_name = self.username, count = 200, include_rts = False, tweet_mode = 'extended')
+        status = tweets[0]
+        json_str = json.dumps(status._json)
+        parsed_json = json.loads(json_str)
+        print(json.dumps(parsed_json, indent=4, sort_keys=True))
         
         
