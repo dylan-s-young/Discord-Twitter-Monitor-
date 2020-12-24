@@ -14,7 +14,7 @@ def post(username, text, pfp_image, mediaurl):
     embed = DiscordEmbed(title = f'Tweet', description = text, color=242424)
     embed.set_timestamp()
     embed.add_embed_field(name='Twitter', value = user_handler)
-    embed.set_footer(text = emoji.emojize('Version 0.0.2 | Coded by Dylan:thumbs_up:'))
+    embed.set_footer(text = emoji.emojize('Version 0.0.3 | Coded by Dylan:thumbs_up:'))
     webhook = DiscordWebhook(url = webhook_list)
     embed.set_author(name = username, url = 'https://'+ user_handler, icon_url = pfp_image)
     webhook.add_embed(embed)
@@ -23,4 +23,5 @@ def post(username, text, pfp_image, mediaurl):
     
     response = webhook.execute()
 
-
+def monitoring():
+    pass
