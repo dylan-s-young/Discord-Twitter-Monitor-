@@ -18,3 +18,10 @@
     - Created Class Twitter_user() 
     - Will add webhook post before monitor starts letting the user know what is being monitored.
     - Have Error with profile pic being sent. (might being rate-limited?)
+## ```Update Version 0.0.4```
+### 12/23/20
+- Fixed profile pic being sent in webhook.
+- Sends Webhook of who is being monitored. 
+- Minor tweaks to different methods. 
+- Notes: 
+    - Will add follow count and more. (See what I can add from JSON)

@@ -39,24 +39,27 @@ class twitter_user():
             print(f'New Tweet Detected! Posting to webhook.')
             self.created_at = monitoring_next
             self.text += parsed_json['full_text'] #Grabs Tweet Info 
-            self.profile_img += parsed_json['user']['profile_image_url'] #Gets profile image
             try:
                 self.media_image += parsed_json['entities']['media'][0]['media_url']
             except:
                 self.media_image = False
+            print(self.media_image)
             post(self.username,self.text,self.profile_img,self.media_image) #posts tweet
         self.monitoring_tweets()
             
 
-    def monitoring(self):
-        pass
-    def tweet_created(self): #comparing dates when tweet goes live. 
+    def user_being_monitored(self): 
         tweets = api.user_timeline(screen_name = self.username, count = 200, include_rts = False, tweet_mode = 'extended')
         status = tweets[0]
         json_str = json.dumps(status._json)
         parsed_json = json.loads(json_str)
         tweet_created = parsed_json['created_at']
         self.created_at = tweet_created
+        self.profile_img += parsed_json['user']['profile_image_url'] #sets profile image
+        print(f'{self.username} is being monitoed. Posting to webhook.')
+        monitoring_post(self.username,self.profile_img)
         print(f'Last tweet was @ {self.created_at}. Monitoring for next tweet....')
         self.monitoring_tweets()
+
+        
         

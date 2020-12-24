@@ -13,6 +13,6 @@ if __name__ == "__main__":
     print(f'Monitor started at {start_time}')
     try:
         user = twitter_user(username)
-        user.tweet_created()
+        user.user_being_monitored()
     except:
         print(f'Unforseen Circumstances. Twitter user may have no tweets or ended program.')
