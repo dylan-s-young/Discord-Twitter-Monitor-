@@ -25,8 +25,8 @@ class twitter_user():
         parsed_json = json.loads(json_str)
         monitoring_next = parsed_json['created_at']
         if monitoring_next == self.created_at:
-            print(f'No new tweets @ {datetime.now()}...Sleeping for 10 Seconds.')
-            time.sleep(10)
+            print(f'No new tweets @ {datetime.now()}...Sleeping for 20 Seconds.')
+            time.sleep(20)
         else:
             print(f'New Tweet Detected! Posting to webhook.')
             self.created_at = monitoring_next

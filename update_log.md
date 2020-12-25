@@ -30,3 +30,10 @@
 - Tweak to fix image posting in 'Twitter_details.py'
 - Bugs:
     - If a photo is available, full_text will post the https link along with the text in the tweet. (Can fix by filtering out https://)
+## ```Update Version 0.0.6```
+### 12/24/20
+- Minor tweaks. 
+- Added README.md
+- Notes:
+    - Added recursion limit and increased delay to 20 seconds. 
+    - You will have to restart bot ater a certain amount of time.
