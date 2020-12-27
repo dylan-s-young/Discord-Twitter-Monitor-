@@ -8,8 +8,6 @@
   <h3 align="center">Discord Twitter Monitor</h3>
     
   <p align="center">
-    Get sent a Discord Webhook when the monitored user Tweets!
-    <br />
     <a href="https://github.com/GoldenTBE/Discord-Twitter-Monitor-"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://github.com/GoldenTBE/Discord-Twitter-Monitor-/issues">Report Bug</a>
