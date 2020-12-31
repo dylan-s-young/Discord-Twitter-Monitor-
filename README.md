@@ -113,7 +113,7 @@ Will Update(12/25/20)
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/GoldenTBE/Discord-Twitter-Monitor-/issues) for a list of proposed features (and known issues).
 
 Update Log - [Update Log](https://github.com/GoldenTBE/Discord-Twitter-Monitor-/blob/master/update_log.md)
 
